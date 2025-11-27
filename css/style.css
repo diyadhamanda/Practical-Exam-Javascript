@@ -1,3 +1,7 @@
+body{
+    background: url('../images/5137810.png ') no-repeat;
+    background-size: cover;
+}
 .card {
     border-radius: 10px;
 }

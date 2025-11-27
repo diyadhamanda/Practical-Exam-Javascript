@@ -11,7 +11,6 @@ window.onload = () => {
 
     taskInput.focus();
 
-    // Save Task
     window.saveTask = () => {
 
         if (taskInput.value === "" || descInput.value === "" || dateInput.value === "" || timeInput.value === "") {
@@ -45,7 +44,6 @@ window.onload = () => {
         displayTasks();
     };
 
-    // Clear form
     const clearForm = () => {
         taskInput.value = "";
         descInput.value = "";
@@ -54,7 +52,6 @@ window.onload = () => {
         taskInput.focus();
     };
 
-    // Display tasks (CARD FORMAT)
     window.displayTasks = () => {
 
         taskCards.innerHTML = "";
@@ -84,7 +81,6 @@ window.onload = () => {
         });
     };
 
-    // Edit Task
     window.editTask = (id) => {
         let t = tasks.find(x => x.id === id);
         editId = id;
@@ -97,13 +93,11 @@ window.onload = () => {
         taskInput.focus();
     };
 
-    // Delete Task
     window.deleteTask = (id) => {
         tasks = tasks.filter(t => t.id !== id);
         localStorage.setItem("tasks", JSON.stringify(tasks));
         displayTasks();
     };
 
-    // Initial load
     displayTasks();
 };
